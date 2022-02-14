@@ -114,7 +114,7 @@ screen say(who, what):
     ## По стандарту не показывается на варианте для мобильных устройств — мало
     ## места.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.2 yalign 0.8
 
 
 ## Делает namebox доступным для стилизации через объект Character.
@@ -268,7 +268,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 style quick_button is default
 style quick_button_text is button_text
@@ -294,8 +294,14 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        if renpy.get_screen("main_menu"):
+            xalign 0.5
+            yalign 0.75
+        else:
+            xoffset 90
+            yalign 0.5
+
+
 
         spacing gui.navigation_spacing
 
@@ -309,7 +315,7 @@ screen navigation():
 
             textbutton _("Сохранить") action ShowMenu("save")
 
-        textbutton _("Загрузить") action ShowMenu("load")
+        #textbutton _("Загрузить") action ShowMenu("load")
 
         textbutton _("Настройки") action ShowMenu("preferences")
 
@@ -321,12 +327,12 @@ screen navigation():
 
             textbutton _("Главное меню") action MainMenu()
 
-        textbutton _("Об игре") action ShowMenu("about")
+        #textbutton _("Об игре") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Помощь не необходима и не относится к мобильным устройствам.
-            textbutton _("Помощь") action ShowMenu("help")
+            #textbutton _("Помощь") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
@@ -344,6 +350,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    xalign 0.5
 
 
 ## Экран главного меню #########################################################
@@ -390,7 +397,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -532,7 +539,7 @@ style game_menu_label_text:
     yalign 0.5
 
 style return_button:
-    xpos gui.navigation_xpos
+    xpos 90
     yalign 1.0
     yoffset -45
 
@@ -580,7 +587,7 @@ style about_label_text:
 ## как они почти одинаковые, оба реализованы по правилам третьего экрана —
 ## file_slots.
 ##
-## https://www.renpy.org/doc/html/screen_special.html#save 
+## https://www.renpy.org/doc/html/screen_special.html#save
 
 screen save():
 

@@ -33,7 +33,7 @@ define gui.idle_color = u'#888888'
 define gui.idle_small_color = u'#aaaaaa'
 
 ## Цвет, используемых в кнопках и панелях, когда они наведены.
-define gui.hover_color = u'#66c1e0'
+define gui.hover_color = u'#f5f5f5'
 
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
@@ -56,13 +56,13 @@ define gui.interface_text_color = u'#ffffff'
 ## Шрифты и их размеры #########################################################
 
 ## Шрифт, используемый внутриигровым текстом.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "Hardpixel.otf"
 
 ## Шрифт, используемый именами персонажей.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "Hardpixel.otf"
 
 ## Шрифт, используемый текстом вне игры.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "Hardpixel.otf"
 
 ## Размер нормального текста диалога.
 define gui.text_size = 33
@@ -99,7 +99,7 @@ define gui.textbox_height = 278
 
 ## Местоположение текстового окна по вертикали экрана. 0.0 — верх, 0.5 — центр и
 ## 1.0 — низ.
-define gui.textbox_yalign = 1.0
+define gui.textbox_yalign = 0.78
 
 
 ## Местоположение имени говорящего персонажа по отношению к текстовому окну.
@@ -130,11 +130,11 @@ define gui.namebox_tile = False
 ## Размещение диалога по отношению к текстовому окну. Это могут быть целые
 ## значения в пикселях слева и сверху от текстового окна или процентное
 ## отношение, например, 0.5 для центрирования.
-define gui.dialogue_xpos = 402
+define gui.dialogue_xpos = 0.175
 define gui.dialogue_ypos = 75
 
 ## Максимальная ширина текста диалога в пикселях.
-define gui.dialogue_width = 1116
+define gui.dialogue_width = 1270
 
 ## Горизонтальное выравнивание текста диалога. Это может быть 0.0 для
 ## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного
